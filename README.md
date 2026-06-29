@@ -8,7 +8,7 @@ Latest Stable and Dev builds for all platforms are supported
 
 ## Build
 
-`zig` is required to build this project, version `0.15.2` is recommended
+`zig` is required to build this project, version `0.16.0` is recommended
 
 ```shell
 zig build -Doptimize=ReleaseSmall
