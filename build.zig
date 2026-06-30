@@ -32,7 +32,7 @@ pub fn build(b: *std.Build) !void {
                 .link_libc = true,
             })
         });
-        keygen.linkLibrary(lzcrypt);
+        keygen.root_module.linkLibrary(lzcrypt);
         keygen.root_module.addCSourceFiles(.{
             .root = b.path("src"),
             .files = &[_][]const u8{
