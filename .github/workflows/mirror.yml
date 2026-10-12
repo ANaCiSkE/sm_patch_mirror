@@ -1,0 +1,23 @@
+name: 'mirror'
+on:
+  push:
+    branches:
+        - __mirror
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    name: mirror
+    steps:
+      - name: mirror
+        id: mirror
+        uses: bridgelightcloud/github-mirror-action@v3
+        with:
+          origin: 'https://github.com/Antibioticss/sublime-keygen.git'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
